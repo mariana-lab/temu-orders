@@ -20,62 +20,100 @@ async function run(xPhanData) {
   closeOverlay()
 
   const orders = await fetchAllOrders({ xPhanData })
-  const items = orders
-    .flatMap((orderparent) => orderparent?.order_list ?? [])
-    .flatMap((orderchild) => orderchild?.order_goods ?? [])
-
-  const cards = items
+  const orderCards = orders
     .map((order, idx) => {
-      const title = order?.spec
-      const alt = order?.goods_name
-      const url = order?.goods_link_url
-      const src = order?.thumb_url
-        ? order.thumb_url + '?imageView2/2/w/300/q/70/format/avif'
-        : null
-      if (!title || !src) return null
-      return { id: idx + 1, title, src, url, alt }
+      const items = (order?.order_list ?? [])
+        .map((entry) => entry?.order_goods)
+        .filter(Boolean)
+        .map((item) => {
+          const title = item?.spec
+          const alt = item?.goods_name
+          const url = item?.goods_link_url
+          const src = item?.thumb_url
+            ? item.thumb_url + '?imageView2/2/w/300/q/70/format/avif'
+            : null
+          if (!title || !src) return null
+          return { title, src, url, alt }
+        })
+        .filter(Boolean)
+
+      if (!items.length) return null
+
+      return {
+        id: idx + 1,
+        shippingStatus: order?.status_prompt || 'Unknown status',
+        orderedAt: order?.parent_order_time_format || 'Unknown date',
+        orderPrice:
+          order?.price_desc?.display_amount_with_symbol || order?.price_desc?.display_amount || 'N/A',
+        items
+      }
     })
     .filter(Boolean)
 
-  buildOverlay(cards)
+  buildOverlay(orderCards)
 }
 
-function buildOverlay(cards) {
+function buildOverlay(orderCards) {
   const overlay = document.createElement('div')
   overlay.id = OVERLAY_ID
   overlay.innerHTML = `
     <div class="__aria_cards_header__">
-      <div><b>Items</b> (${cards.length})</div>
+      <div><b>Orders</b> (${orderCards.length})</div>
       <div class="__aria_cards_actions__">
         <button id="__aria_cards_copy__">Copy JSON</button>
         <button id="__aria_cards_close__">Close</button>
       </div>
     </div>
-    <div class="__aria_cards_grid__"></div>
+    <div class="__aria_orders_grid__"></div>
   `
   document.body.appendChild(overlay)
 
-  const grid = overlay.querySelector('.__aria_cards_grid__')
+  const grid = overlay.querySelector('.__aria_orders_grid__')
 
-  cards.forEach((item) => {
-    const card = document.createElement('div')
-    card.className = '__aria_card__'
-    card.innerHTML = `
-      <a target="_blank" rel="noopener noreferrer" href="${item.url || '#'}">
-        <img src="${item.src}" alt="${escapeHtml(item.alt)}">
-      </a>
-      <div class="__aria_card_body__">
-        <div class="__aria_card_title__">${escapeHtml(item.title)}</div>
-        <div class="__aria_card_meta__">#${item.id}</div>
+  orderCards.forEach((order) => {
+    const orderCard = document.createElement('section')
+    orderCard.className = '__aria_order_card__'
+    orderCard.innerHTML = `
+      <div class="__aria_order_card_header__">
+        <div class="__aria_order_card_title__">Order #${order.id}</div>
+        <div class="__aria_order_card_status__">${escapeHtml(order.shippingStatus)}</div>
       </div>
+      <div class="__aria_order_card_meta__">
+        <span><b>Price:</b> ${escapeHtml(order.orderPrice)}</span>
+        <span><b>Date:</b> ${escapeHtml(order.orderedAt)}</span>
+      </div>
+      <div class="__aria_cards_grid__"></div>
     `
-    grid.appendChild(card)
+
+    const itemsGrid = orderCard.querySelector('.__aria_cards_grid__')
+    order.items.forEach((item, idx) => {
+      const card = document.createElement('div')
+      card.className = '__aria_card__'
+      card.innerHTML = `
+        <a target="_blank" rel="noopener noreferrer" href="${item.url || '#'}">
+          <img src="${item.src}" alt="${escapeHtml(item.alt)}">
+        </a>
+        <div class="__aria_card_body__">
+          <div class="__aria_card_title__">${escapeHtml(item.title)}</div>
+          <div class="__aria_card_meta__">Item #${idx + 1}</div>
+        </div>
+      `
+      itemsGrid.appendChild(card)
+    })
+
+    grid.appendChild(orderCard)
   })
 
   overlay.querySelector('#__aria_cards_close__').addEventListener('click', closeOverlay)
 
   overlay.querySelector('#__aria_cards_copy__').addEventListener('click', async () => {
-    const payload = cards.map(({ id, title, src, url, alt }) => ({ id, title, src, url, alt }))
+    const payload = orderCards.map(({ id, shippingStatus, orderedAt, orderPrice, items }) => ({
+      id,
+      shippingStatus,
+      orderedAt,
+      orderPrice,
+      items
+    }))
     try {
       await navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
       toast('Copied JSON to clipboard')
