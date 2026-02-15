@@ -1,0 +1,1033 @@
+{
+  "server_time": 1772155027,
+  "view_orders": [
+    {
+      "type": 1,
+      "parent_order_sn": "PO-163-06188411234012911",
+      "parent_seller_type": 0,
+      "create_flag": "563104914208777",
+      "parent_order_time": 1771032873,
+      "parent_order_time_format": "Feb 13, 2026",
+      "promise_shipping_end_time": 1774243274,
+      "promise_shipping_start_time": 1772601674,
+      "promise_shipping_time_range": "Mar 2-Mar 18",
+      "display_promise_shipping_time_range": "Delivery: Mar 2-Mar 18",
+      "is_pre_order": false,
+      "status_prompt": "Shipped",
+      "parent_comment_status": 0,
+      "parent_status": 3,
+      "order_list": [
+        {
+          "order_sn": "163-06188474211122911",
+          "market_region": 163,
+          "sort_id": "163-06188474211122911",
+          "is_pre_sale": false,
+          "address_snapshot_id": "263100009991234567",
+          "goods_amount": 499,
+          "order_goods": {
+            "goods_name": "96-Pcs Colorful Embroidery Floss Set + 1pc Needle Threader, DIY Craft Threads, Friendship Bracelet Kit, Cross Stitch Starter Pack",
+            "goods_retail_price": 549,
+            "goods_retail_price_display": "5.49",
+            "goods_retail_price_with_symbol_display": "5,49€",
+            "goods_price": 499,
+            "goods_price_display": "4.99",
+            "goods_price_with_symbol_display": "4,99€",
+            "symbol": "€",
+            "goods_number": 1,
+            "goods_id": 601200100009991,
+            "thumb_url": "https://example.com/mock-images/threads-01.jpg",
+            "spec": "96pcs floss + threader",
+            "sku_id": 17690000000001,
+            "goods_link_url": "goods.html?_bg_fs=1&goods_id=601200100009991"
+          },
+          "order_comment_info_vo": {
+            "comment_status": 0
+          },
+          "desc": "",
+          "is_giveaway_order": false,
+          "is_lack_order": false,
+          "pic_desc_list": []
+        },
+        {
+          "order_sn": "163-06188453320022911",
+          "market_region": 163,
+          "sort_id": "163-06188453320022911",
+          "is_pre_sale": false,
+          "address_snapshot_id": "263100009991234567",
+          "goods_amount": 319,
+          "order_goods": {
+            "goods_name": "2-Roll Waterproof Sealing Tape for Kitchen & Bathroom, Transparent Silicone Strip for Sink & Wall Corners (Home Use)",
+            "goods_retail_price": 349,
+            "goods_retail_price_display": "3.49",
+            "goods_retail_price_with_symbol_display": "3,49€",
+            "goods_price": 319,
+            "goods_price_display": "3.19",
+            "goods_price_with_symbol_display": "3,19€",
+            "symbol": "€",
+            "goods_number": 1,
+            "goods_id": 601200200009992,
+            "thumb_url": "https://example.com/mock-images/tape-02.jpg",
+            "spec": "5m/roll • 2 rolls",
+            "sku_id": 17690000000002,
+            "goods_link_url": "goods.html?_bg_fs=1&goods_id=601200200009992"
+          },
+          "order_comment_info_vo": {
+            "comment_status": 0
+          },
+          "desc": "",
+          "is_giveaway_order": false,
+          "is_lack_order": false,
+          "pic_desc_list": []
+        },
+        {
+          "order_sn": "163-06188412399022911",
+          "market_region": 163,
+          "sort_id": "163-06188412399022911",
+          "is_pre_sale": false,
+          "address_snapshot_id": "263100009991234567",
+          "goods_amount": 279,
+          "order_goods": {
+            "goods_name": "Mini USB 3.0 Memory Card Reader (SD/Micro SD/TF) Adapter for Laptop/PC, Plug & Play",
+            "goods_retail_price": 299,
+            "goods_retail_price_display": "2.99",
+            "goods_retail_price_with_symbol_display": "2,99€",
+            "goods_price": 279,
+            "goods_price_display": "2.79",
+            "goods_price_with_symbol_display": "2,79€",
+            "symbol": "€",
+            "goods_number": 1,
+            "goods_id": 601200300009993,
+            "thumb_url": "https://example.com/mock-images/cardreader-03.jpg",
+            "spec": "USB3.0 • White",
+            "sku_id": 17690000000003,
+            "goods_link_url": "goods.html?_bg_fs=1&goods_id=601200300009993"
+          },
+          "order_comment_info_vo": {
+            "comment_status": 0
+          },
+          "desc": "",
+          "is_giveaway_order": false,
+          "is_lack_order": false,
+          "pic_desc_list": []
+        },
+        {
+          "order_sn": "163-06188499888022911",
+          "market_region": 163,
+          "sort_id": "163-06188499888022911",
+          "is_pre_sale": false,
+          "address_snapshot_id": "263100009991234567",
+          "goods_amount": 389,
+          "order_goods": {
+            "goods_name": "Beeswax Wood Polish Paste (80ml) + Sponge, Water-Resistant Finish for Wood Surfaces",
+            "goods_retail_price": 399,
+            "goods_retail_price_display": "3.99",
+            "goods_retail_price_with_symbol_display": "3,99€",
+            "goods_price": 389,
+            "goods_price_display": "3.89",
+            "goods_price_with_symbol_display": "3,89€",
+            "symbol": "€",
+            "goods_number": 1,
+            "goods_id": 601200400009994,
+            "thumb_url": "https://example.com/mock-images/polish-04.jpg",
+            "spec": "80ml + sponge",
+            "sku_id": 17690000000004,
+            "goods_link_url": "goods.html?_bg_fs=1&goods_id=601200400009994"
+          },
+          "order_comment_info_vo": {
+            "comment_status": 0
+          },
+          "desc": "",
+          "is_giveaway_order": false,
+          "is_lack_order": false,
+          "pic_desc_list": []
+        }
+      ],
+      "price_desc": {
+        "currency": "EUR",
+        "hide_desc": false,
+        "prefix": "4 items:",
+        "suffix": "",
+        "display_amount": "13.86",
+        "display_amount_with_symbol": "13,86€",
+        "symbol": "€",
+        "symbol_style": {
+          "font_size": 11,
+          "font_color": "#000000",
+          "is_add_deleted_line": false,
+          "is_bold": true
+        },
+        "display_amount_style": {
+          "font_size": 13,
+          "font_color": "#000000",
+          "is_add_deleted_line": false,
+          "is_bold": true
+        },
+        "prefix_style": {
+          "font_size": 13,
+          "font_color": "#777777",
+          "is_add_deleted_line": false,
+          "is_bold": false
+        },
+        "item_count": 4
+      },
+      "order_button_list": [
+        {
+          "button_action": 1,
+          "type_value": {
+            "jump_url": "bgst_express_list.html?parent_order_sn=PO-163-06188411234012911&page_from=1",
+            "action_value": "{\"isMultiPackage\":true}"
+          },
+          "button_style_type": 1,
+          "brief_prompt": "Track",
+          "metric_info": "{\"page_el_sn\":\"200336\"}",
+          "id": 6000,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/track.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 10,
+          "type_value": {},
+          "button_style_type": 0,
+          "brief_prompt": "Buy this again",
+          "metric_info": "{\"page_el_sn\":\"200340\", \"cart_scene\":\"57\", \"goods_list\":[601200100009991, 601200200009992, 601200300009993, 601200400009994]}",
+          "id": 5500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/buy-again.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 100,
+          "type_value": {
+            "jump_url": "",
+            "action_value": "",
+            "path": "/api/bg/aristotle/query_help_with_order_info",
+            "param_map": "{\"parent_order_sn\":\"PO-163-06188411234012911\"}"
+          },
+          "brief_prompt": "Delivery / Other help",
+          "metric_info": "{\"page_el_sn\":\"203690\"}",
+          "id": 7500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/help.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 26,
+          "type_value": {
+            "action_value": ""
+          },
+          "button_style_type": 0,
+          "brief_prompt": "Return/Refund",
+          "metric_info": "{\"page_el_sn\":\"207160\"}",
+          "id": 8000,
+          "sub_id": -1,
+          "icon_url": "",
+          "extra_info": {}
+        },
+        {
+          "button_action": 3,
+          "button_style_type": 0,
+          "brief_prompt": "Change address",
+          "metric_info": "{\"page_el_sn\":\"200333\"}",
+          "id": 3500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/address.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 27,
+          "type_value": {
+            "info_vo": {
+              "show_price_judgment_match": true
+            }
+          },
+          "brief_prompt": "Price match/adjustment",
+          "metric_info": "{\"page_el_sn\":\"224928\"}",
+          "id": 7100,
+          "sub_id": -1,
+          "icon_url": "",
+          "extra_info": {}
+        }
+      ],
+      "button_size_outer_show": 3,
+      "tab_belong": ["Shipped", "all"],
+      "order_link_url": "bgt_order_detail.html?parent_order_sn=PO-163-06188411234012911&page_from=1&_bg_fs=1",
+      "address_info": {
+        "can_show_module_without_info": false,
+        "can_modify_address": true,
+        "show_modify_address_button": true,
+        "address_snapshot_id": "263100009991234567",
+        "address_snapshot_sn": "CgI2WRIIdHIyallDaVIaIE1PQ0tfQUREUkVTU19TTkFQU0hPVF9TWU1CT0w=",
+        "region_id1": 163,
+        "change_type": 1,
+        "change_address_pre_pop_type": 3,
+        "show_address_unexpected_vo": false
+      },
+      "shipping_module": {
+        "package_size": 2,
+        "pack_split_content": "Order split into 2 packages:",
+        "package_list": [
+          {
+            "package_name": "Package 1",
+            "package_sn": "BG-2602139FA1M0CKP1",
+            "package_no": 1,
+            "size": 2,
+            "description": "Arrived at local hub",
+            "operator_time": 1771976868000,
+            "operator_time_format": "Feb 24, 2026, 4:07 am",
+            "sku_thumb_url_list": [
+              "https://example.com/mock-images/cardreader-03.jpg",
+              "https://example.com/mock-images/polish-04.jpg"
+            ],
+            "goods_volist": [
+              {
+                "goods_id": 601200300009993,
+                "goods_sku_id": 17690000000003,
+                "quantity": 1,
+                "thumb_url": "https://example.com/mock-images/cardreader-03.jpg",
+                "goods_name": "Mini USB 3.0 Memory Card Reader (SD/Micro SD/TF) Adapter for Laptop/PC, Plug & Play",
+                "spec": "USB3.0 • White"
+              },
+              {
+                "goods_id": 601200400009994,
+                "goods_sku_id": 17690000000004,
+                "quantity": 1,
+                "thumb_url": "https://example.com/mock-images/polish-04.jpg",
+                "goods_name": "Beeswax Wood Polish Paste (80ml) + Sponge, Water-Resistant Finish for Wood Surfaces",
+                "spec": "80ml + sponge"
+              }
+            ],
+            "order_package_status": 22,
+            "order_package_status_desc": "In transit",
+            "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-06188411234012911&package_sn=BG-2602139FA1M0CKP1&transport_method=0",
+            "virtual_package": false,
+            "expect_delivery_end_time": 1774243274,
+            "expect_delivery_start_time": 1772601674,
+            "expect_delivery_time_range": "Mar 2-Mar 18",
+            "is_delivered": false,
+            "way_bill_sn": "0079000000000000000001",
+            "logistics_providers_name": "CTT Express",
+            "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+            "logistics_providers_bg_color": "#D7282F",
+            "package_track_unexpected_vo": {
+              "type": 0
+            },
+            "goods_num_tips": "2 item(s) in total",
+            "logistic_provider_info": {
+              "provider_name": "CTT Express",
+              "provider_name_tob": "CTT Express",
+              "provider_id": 202399517,
+              "bg_color": "#D7282F",
+              "logo_url": "https://example.com/mock-icons/ctt.png",
+              "logo_height": 27,
+              "logo_width": 65,
+              "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000001"
+            },
+            "transport_method": 0,
+            "show_red_dot": true,
+            "call_back_transfer_vo": {
+              "callback_scene": 400,
+              "callback_transfer_info": "MOCK_CALLBACK_TOKEN_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            },
+            "status_level2_code": 10016
+          },
+          {
+            "package_name": "Package 2",
+            "package_sn": "BG-2602139FA2M0CKP2",
+            "package_no": 2,
+            "size": 2,
+            "description": "Customs clearance completed",
+            "operator_time": 1772066439000,
+            "operator_time_format": "Feb 25, 2026, 8:47 am",
+            "sku_thumb_url_list": [
+              "https://example.com/mock-images/threads-01.jpg",
+              "https://example.com/mock-images/tape-02.jpg"
+            ],
+            "goods_volist": [
+              {
+                "goods_id": 601200100009991,
+                "goods_sku_id": 17690000000001,
+                "quantity": 1,
+                "thumb_url": "https://example.com/mock-images/threads-01.jpg",
+                "goods_name": "96-Pcs Colorful Embroidery Floss Set + 1pc Needle Threader, DIY Craft Threads, Friendship Bracelet Kit, Cross Stitch Starter Pack",
+                "spec": "96pcs floss + threader"
+              },
+              {
+                "goods_id": 601200200009992,
+                "goods_sku_id": 17690000000002,
+                "quantity": 1,
+                "thumb_url": "https://example.com/mock-images/tape-02.jpg",
+                "goods_name": "2-Roll Waterproof Sealing Tape for Kitchen & Bathroom, Transparent Silicone Strip for Sink & Wall Corners (Home Use)",
+                "spec": "5m/roll • 2 rolls"
+              }
+            ],
+            "order_package_status": 24,
+            "order_package_status_desc": "Cleared customs",
+            "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-06188411234012911&package_sn=BG-2602139FA2M0CKP2&transport_method=0",
+            "virtual_package": false,
+            "expect_delivery_end_time": 1774243274,
+            "expect_delivery_start_time": 1772601674,
+            "expect_delivery_time_range": "Mar 2-Mar 18",
+            "is_delivered": false,
+            "way_bill_sn": "0079000000000000000002",
+            "logistics_providers_name": "CTT Express",
+            "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+            "logistics_providers_bg_color": "#D7282F",
+            "package_track_unexpected_vo": {
+              "type": 0
+            },
+            "goods_num_tips": "2 item(s) in total",
+            "logistic_provider_info": {
+              "provider_name": "CTT Express",
+              "provider_name_tob": "CTT Express",
+              "provider_id": 202399517,
+              "bg_color": "#D7282F",
+              "logo_url": "https://example.com/mock-icons/ctt.png",
+              "logo_height": 27,
+              "logo_width": 65,
+              "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000002"
+            },
+            "transport_method": 0,
+            "show_red_dot": true,
+            "call_back_transfer_vo": {
+              "callback_scene": 400,
+              "callback_transfer_info": "MOCK_CALLBACK_TOKEN_BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+            },
+            "status_level2_code": 40200
+          }
+        ],
+        "order_current_position": 2
+      },
+      "delivery_shipping_module": {
+        "shipping_module_list": [
+          {
+            "package_size": 2,
+            "pack_split_content": "Order split into 2 packages:",
+            "package_list": [
+              {
+                "package_name": "Package 1",
+                "package_sn": "BG-2602139FA1M0CKP1",
+                "package_no": 1,
+                "size": 2,
+                "description": "Arrived at local hub",
+                "operator_time": 1771976868000,
+                "operator_time_format": "Feb 24, 2026, 4:07 am",
+                "sku_thumb_url_list": [
+                  "https://example.com/mock-images/cardreader-03.jpg",
+                  "https://example.com/mock-images/polish-04.jpg"
+                ],
+                "goods_volist": [
+                  {
+                    "goods_id": 601200300009993,
+                    "goods_sku_id": 17690000000003,
+                    "quantity": 1,
+                    "thumb_url": "https://example.com/mock-images/cardreader-03.jpg",
+                    "goods_name": "Mini USB 3.0 Memory Card Reader (SD/Micro SD/TF) Adapter for Laptop/PC, Plug & Play",
+                    "spec": "USB3.0 • White"
+                  },
+                  {
+                    "goods_id": 601200400009994,
+                    "goods_sku_id": 17690000000004,
+                    "quantity": 1,
+                    "thumb_url": "https://example.com/mock-images/polish-04.jpg",
+                    "goods_name": "Beeswax Wood Polish Paste (80ml) + Sponge, Water-Resistant Finish for Wood Surfaces",
+                    "spec": "80ml + sponge"
+                  }
+                ],
+                "order_package_status": 22,
+                "order_package_status_desc": "In transit",
+                "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-06188411234012911&package_sn=BG-2602139FA1M0CKP1&transport_method=0",
+                "virtual_package": false,
+                "expect_delivery_end_time": 1774243274,
+                "expect_delivery_start_time": 1772601674,
+                "expect_delivery_time_range": "Mar 2-Mar 18",
+                "is_delivered": false,
+                "way_bill_sn": "0079000000000000000001",
+                "logistics_providers_name": "CTT Express",
+                "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+                "logistics_providers_bg_color": "#D7282F",
+                "package_track_unexpected_vo": {
+                  "type": 0
+                },
+                "goods_num_tips": "2 item(s) in total",
+                "logistic_provider_info": {
+                  "provider_name": "CTT Express",
+                  "provider_name_tob": "CTT Express",
+                  "provider_id": 202399517,
+                  "bg_color": "#D7282F",
+                  "logo_url": "https://example.com/mock-icons/ctt.png",
+                  "logo_height": 27,
+                  "logo_width": 65,
+                  "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000001"
+                },
+                "transport_method": 0,
+                "show_red_dot": true,
+                "call_back_transfer_vo": {
+                  "callback_scene": 400,
+                  "callback_transfer_info": "MOCK_CALLBACK_TOKEN_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                "status_level2_code": 10016
+              },
+              {
+                "package_name": "Package 2",
+                "package_sn": "BG-2602139FA2M0CKP2",
+                "package_no": 2,
+                "size": 2,
+                "description": "Customs clearance completed",
+                "operator_time": 1772066439000,
+                "operator_time_format": "Feb 25, 2026, 8:47 am",
+                "sku_thumb_url_list": [
+                  "https://example.com/mock-images/threads-01.jpg",
+                  "https://example.com/mock-images/tape-02.jpg"
+                ],
+                "goods_volist": [
+                  {
+                    "goods_id": 601200100009991,
+                    "goods_sku_id": 17690000000001,
+                    "quantity": 1,
+                    "thumb_url": "https://example.com/mock-images/threads-01.jpg",
+                    "goods_name": "96-Pcs Colorful Embroidery Floss Set + 1pc Needle Threader, DIY Craft Threads, Friendship Bracelet Kit, Cross Stitch Starter Pack",
+                    "spec": "96pcs floss + threader"
+                  },
+                  {
+                    "goods_id": 601200200009992,
+                    "goods_sku_id": 17690000000002,
+                    "quantity": 1,
+                    "thumb_url": "https://example.com/mock-images/tape-02.jpg",
+                    "goods_name": "2-Roll Waterproof Sealing Tape for Kitchen & Bathroom, Transparent Silicone Strip for Sink & Wall Corners (Home Use)",
+                    "spec": "5m/roll • 2 rolls"
+                  }
+                ],
+                "order_package_status": 24,
+                "order_package_status_desc": "Cleared customs",
+                "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-06188411234012911&package_sn=BG-2602139FA2M0CKP2&transport_method=0",
+                "virtual_package": false,
+                "expect_delivery_end_time": 1774243274,
+                "expect_delivery_start_time": 1772601674,
+                "expect_delivery_time_range": "Mar 2-Mar 18",
+                "is_delivered": false,
+                "way_bill_sn": "0079000000000000000002",
+                "logistics_providers_name": "CTT Express",
+                "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+                "logistics_providers_bg_color": "#D7282F",
+                "package_track_unexpected_vo": {
+                  "type": 0
+                },
+                "goods_num_tips": "2 item(s) in total",
+                "logistic_provider_info": {
+                  "provider_name": "CTT Express",
+                  "provider_name_tob": "CTT Express",
+                  "provider_id": 202399517,
+                  "bg_color": "#D7282F",
+                  "logo_url": "https://example.com/mock-icons/ctt.png",
+                  "logo_height": 27,
+                  "logo_width": 65,
+                  "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000002"
+                },
+                "transport_method": 0,
+                "show_red_dot": true,
+                "call_back_transfer_vo": {
+                  "callback_scene": 400,
+                  "callback_transfer_info": "MOCK_CALLBACK_TOKEN_BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+                },
+                "status_level2_code": 40200
+              }
+            ],
+            "order_current_position": 2
+          }
+        ],
+        "parent_order_delivery_time_vo": {
+          "delivery_time_desc_rich_content": "Delivery: Mar 2-Mar 18",
+          "delivery_time_desc_type": 1
+        },
+        "except_delivery_time_tip_info": {
+          "delivery_time_pop_info": {
+            "icon_code": "e009",
+            "icon_color": "#777777",
+            "delivery_time_pop_type": 1,
+            "explain_info": {
+              "content_list": [
+                "The guaranteed delivery window for this order is Mar 2-Mar 18.",
+                "Based on this seller's delivery data, <span style='color:#FB7701'>most packages arrive on any day between Mar 2-Mar 18</span>. The actual arrival time may vary due to factors such as <span style='color:#FB7701'>shipment, the weather, and the courier</span>.",
+                "You'll get <span style='color:#FB7701'>a 5,00€ credit</span> if it is delivered later than the guaranteed delivery date (Mar 18)."
+              ],
+              "button": {
+                "desc": "OK"
+              }
+            }
+          }
+        }
+      },
+      "shipping_method_id": 1,
+      "new_order_model": true,
+      "trade_transaction_sn": "TT-163-2058610970000012911",
+      "buy_additional_order_info": {
+        "include_buy_additional_attached_order": false,
+        "attached_order_explain_pop_module": {
+          "title": "What is One-Click pay?",
+          "sub_prompt": [
+            {
+              "text": "One-Click Pay is different from 'Add to cart'.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "One-Click Pay allows you to add items to an order that has a status of 'Processing'.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "These items are not added to your cart for later.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "We will charge you for your One-Click Pay items before your order ships or within 13 hours of the original order being place.",
+              "bold": false,
+              "action_type": 0
+            },
+            {
+              "text": "So if the payment is not deducted immediately, please don't worry. We will notify you after the deduction is completed successfully. One-Click Pay items will be paid for and shipped the same way as the items in the original order.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            { "bold": false, "action_type": 200 },
+            {
+              "text": "The payment method (i.e. credit or debit card) used for your original order will be automatically used for One-Click Pay items. You can cancel your One-Click Pay items before they ship.",
+              "bold": false,
+              "action_type": 0
+            }
+          ]
+        },
+        "attached_order_desc": "Add to your order with One-Click Pay",
+        "attached_order_button_desc": "One-Click Pay",
+        "attached_order_anchoring_module": {
+          "show_local_warehouse_tab": false,
+          "attached_order_anchoring_tab": 1,
+          "show_free_shipping_tab": false
+        },
+        "ceiling_attached_order_shipping_fee_desc_rich": "<iconfont value=\"e040\" style=\"color: #0A8800;margin-right:4px;\" pc-style=\"font-size:22px;\"></iconfont><span style=\"color: #0A8800;font-weight:500;\" pc-style=\"font-size:20px;font-weight:600;\">All items ship free together </span><br/><span style=\"color: #0A8800;font-weight:400;\" pc-style=\"font-size:16px;\">Pay via One-Click.</span><span style=\"color:#020202;font-weight:400;\" pc-style=\"font-size:16px\"> Ends in </span><countdown end-ts=1771061673></countdown>"
+      },
+      "need_query_relative_parent_order": false,
+      "is_virtual_parent_order": false,
+      "is_create_auto_confirm_order": false,
+      "parent_order_show_tag_vo": {
+        "parent_order_show_tag_list": [
+          { "tag_rich_content": "5€ credit if delay" }
+        ]
+      }
+    },
+    {
+      "type": 1,
+      "parent_order_sn": "PO-163-02890177111002911",
+      "parent_seller_type": 0,
+      "create_flag": "563104914356333",
+      "parent_order_time": 1769870065,
+      "parent_order_time_format": "Jan 31, 2026",
+      "promise_shipping_end_time": 1776964867,
+      "promise_shipping_start_time": 1774290067,
+      "promise_shipping_time_range": "Mar 23-Apr 23",
+      "display_promise_shipping_time_range": "Delivery: Mar 23-Apr 23",
+      "is_pre_order": false,
+      "status_prompt": "In transit",
+      "parent_comment_status": 0,
+      "parent_status": 3,
+      "order_list": [
+        {
+          "order_sn": "163-02890222111012911",
+          "market_region": 163,
+          "sort_id": "163-02890222111012911",
+          "is_pre_sale": false,
+          "address_snapshot_id": "263100009991234567",
+          "goods_amount": 1399,
+          "order_goods": {
+            "goods_name": "Casting Plaster Powder (1kg) Fast Set, Smooth Finish, Beginner-Friendly DIY Craft Material",
+            "goods_retail_price": 1499,
+            "goods_retail_price_display": "14.99",
+            "goods_retail_price_with_symbol_display": "14,99€",
+            "goods_price": 1399,
+            "goods_price_display": "13.99",
+            "goods_price_with_symbol_display": "13,99€",
+            "symbol": "€",
+            "goods_number": 1,
+            "goods_id": 601300100001111,
+            "thumb_url": "https://example.com/mock-images/plaster-05.jpg",
+            "spec": "1000g",
+            "sku_id": 17690000000005,
+            "goods_link_url": "goods.html?_bg_fs=1&goods_id=601300100001111"
+          },
+          "order_comment_info_vo": {
+            "comment_status": 0
+          },
+          "desc": "",
+          "is_giveaway_order": false,
+          "is_lack_order": false,
+          "pic_desc_list": ["Shipped by land"]
+        }
+      ],
+      "price_desc": {
+        "currency": "EUR",
+        "hide_desc": false,
+        "prefix": "1 item:",
+        "suffix": "",
+        "display_amount": "13.99",
+        "display_amount_with_symbol": "13,99€",
+        "symbol": "€",
+        "symbol_style": {
+          "font_size": 11,
+          "font_color": "#000000",
+          "is_add_deleted_line": false,
+          "is_bold": true
+        },
+        "display_amount_style": {
+          "font_size": 13,
+          "font_color": "#000000",
+          "is_add_deleted_line": false,
+          "is_bold": true
+        },
+        "prefix_style": {
+          "font_size": 13,
+          "font_color": "#777777",
+          "is_add_deleted_line": false,
+          "is_bold": false
+        },
+        "item_count": 1
+      },
+      "order_button_list": [
+        {
+          "button_action": 1,
+          "type_value": {
+            "jump_url": "bgst_express.html?parent_order_sn=PO-163-02890177111002911&page_from=1&package_sn=BG-2601319FBM0CKL4N",
+            "action_value": "{\"isMultiPackage\":false,\"logisticProviderInfo\":{\"providerName\":\"CTT Express\",\"providerId\":202399517,\"bgColor\":\"#D7282F\",\"logoUrl\":\"https://example.com/mock-icons/ctt.png\",\"logoHeight\":27,\"logoWidth\":65}}"
+          },
+          "button_style_type": 1,
+          "brief_prompt": "Track",
+          "metric_info": "{\"page_el_sn\":\"200336\"}",
+          "id": 6000,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/track.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 10,
+          "type_value": {},
+          "button_style_type": 0,
+          "brief_prompt": "Buy this again",
+          "metric_info": "{\"page_el_sn\":\"200340\", \"cart_scene\":\"57\", \"goods_list\":[601300100001111]}",
+          "id": 5500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/buy-again.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 100,
+          "type_value": {
+            "jump_url": "",
+            "action_value": "",
+            "path": "/api/bg/aristotle/query_help_with_order_info",
+            "param_map": "{\"parent_order_sn\":\"PO-163-02890177111002911\"}"
+          },
+          "brief_prompt": "Delivery / Other help",
+          "metric_info": "{\"page_el_sn\":\"203690\"}",
+          "id": 7500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/help.png",
+          "extra_info": {}
+        },
+        {
+          "button_action": 26,
+          "type_value": { "action_value": "" },
+          "button_style_type": 0,
+          "brief_prompt": "Return/Refund",
+          "metric_info": "{\"page_el_sn\":\"207160\"}",
+          "id": 8000,
+          "sub_id": -1,
+          "icon_url": "",
+          "extra_info": {}
+        },
+        {
+          "button_action": 3,
+          "button_style_type": 0,
+          "brief_prompt": "Change address",
+          "metric_info": "{\"page_el_sn\":\"200333\"}",
+          "id": 3500,
+          "sub_id": -1,
+          "icon_url": "https://example.com/mock-icons/address.png",
+          "click_popup_window": {
+            "main_title_rich": [
+              {
+                "text": "The address for this order cannot be modified because your order has been packed or shipped. But you can try the following way:"
+              }
+            ],
+            "sub_title_rich": [
+              {
+                "text": "Contact carrier to modify the address<iconfont value=\"f60a\"></iconfont>",
+                "desc": "If a fee is incurred, it will be charged by the courier.",
+                "link_url": "/bgst_express.html?parent_order_sn=PO-163-02890177111002911&package_sn=BG-2601319FBM0CKL4N&_logistic_page_from=301&show_contact_provider=1"
+              },
+              {
+                "text": "Modify your address for future orders<iconfont value=\"f60a\"></iconfont>",
+                "desc": "The changes will only be effective for future orders.",
+                "link_url": "/address.html?check_region=true&addr_scene=100"
+              }
+            ]
+          },
+          "extra_info": { "change_address_pre_pop_type": 3 }
+        },
+        {
+          "button_action": 27,
+          "type_value": { "info_vo": { "show_price_judgment_match": true } },
+          "brief_prompt": "Price match/adjustment",
+          "metric_info": "{\"page_el_sn\":\"224928\"}",
+          "id": 7100,
+          "sub_id": -1,
+          "icon_url": "",
+          "extra_info": {}
+        }
+      ],
+      "button_size_outer_show": 3,
+      "tab_belong": ["Shipped", "all"],
+      "order_link_url": "bgt_order_detail.html?parent_order_sn=PO-163-02890177111002911&page_from=1&_bg_fs=1",
+      "address_info": {
+        "can_show_module_without_info": false,
+        "can_modify_address": true,
+        "show_modify_address_button": true,
+        "address_snapshot_id": "263100009991234567",
+        "address_snapshot_sn": "CgI2WRIIdHIyallDaVIaIE1PQ0tfQUREUkVTU19TTkFQU0hPVF9TTkFQQl9CVw==",
+        "region_id1": 163,
+        "change_type": 1,
+        "change_address_pre_pop_type": 3,
+        "show_address_unexpected_vo": false
+      },
+      "shipping_module": {
+        "package_size": 1,
+        "package_list": [
+          {
+            "package_name": "Shipped by land",
+            "package_sn": "BG-2601319FBM0CKL4N",
+            "package_no": 1,
+            "size": 1,
+            "description": "Transit delegation",
+            "operator_time": 1770867347000,
+            "operator_time_format": "Feb 12, 2026, 8:22 pm",
+            "sku_thumb_url_list": [
+              "https://example.com/mock-images/plaster-05.jpg"
+            ],
+            "goods_volist": [
+              {
+                "goods_id": 601300100001111,
+                "goods_sku_id": 17690000000005,
+                "quantity": 1,
+                "thumb_url": "https://example.com/mock-images/plaster-05.jpg",
+                "goods_name": "Casting Plaster Powder (1kg) Fast Set, Smooth Finish, Beginner-Friendly DIY Craft Material",
+                "spec": "1000g"
+              }
+            ],
+            "order_package_status": 22,
+            "order_package_status_desc": "In transit",
+            "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-02890177111002911&package_sn=BG-2601319FBM0CKL4N&transport_method=2",
+            "virtual_package": false,
+            "expect_delivery_end_time": 1776964867,
+            "expect_delivery_start_time": 1774290067,
+            "expect_delivery_time_range": "Mar 23-Apr 23",
+            "is_delivered": false,
+            "way_bill_sn": "0079000000000000000101",
+            "logistics_providers_name": "CTT Express",
+            "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+            "logistics_providers_bg_color": "#D7282F",
+            "package_track_unexpected_vo": {
+              "type": 900003,
+              "description": "We've <span style='color:#FB7701'>requested an update</span> due to no recent tracking events. Delays can be caused by high volumes, holidays, or logistics. <urllink url='/bgst_express.html?pop_up=ct_prr&_logistic_page_from=301&parent_order_sn=PO-163-02890177111002911&package_sn=BG-2601319FBM0CKL4N' biz_scene='contactProvider'><span style='color:#FB7701'>Contact the courier for more details<iconfont value='f60a'></iconfont></span></urllink>",
+              "bottom_rich_text": "<iconfont value='e097' style='margin-right:2px' pc-style='margin-right:4px'></iconfont>If no updates in <placeholder biz_scene='refund_countdown' end-ts='1776964867'></placeholder>, <span style='font-weight:600'>you'll get a 5€ credit</span> within 48 hours. If no updates by <span style='font-weight:600'>Mar 10, you can request a refund</span>.",
+              "display_type": 5
+            },
+            "goods_num_tips": "1 item(s) in total",
+            "logistic_provider_info": {
+              "provider_name": "CTT Express",
+              "provider_name_tob": "CTT Express",
+              "provider_id": 202399517,
+              "bg_color": "#D7282F",
+              "logo_url": "https://example.com/mock-icons/ctt.png",
+              "logo_height": 27,
+              "logo_width": 65,
+              "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000101"
+            },
+            "transport_method": 2,
+            "package_shipping_affect_desc": "Due to size or other reasons, 1 item(s) in your order will be shipped by land and will not affect other items' delivery time.",
+            "delivery_time_with_package_shipping_affect_desc": "<span style=\"color:#FB7701\">Land delivery: Mar 23-Apr 23.</span> Due to size or other reasons, 1 item(s) in your order will be shipped by land and will not affect other items' delivery time.",
+            "show_red_dot": true,
+            "call_back_transfer_vo": {
+              "callback_scene": 400,
+              "callback_transfer_info": "MOCK_CALLBACK_TOKEN_LAND_CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+            },
+            "status_level2_code": 10014
+          }
+        ],
+        "order_current_position": 2
+      },
+      "delivery_shipping_module": {
+        "shipping_affect_sub_title": "Due to size, weight, or other reasons, this order will be shipped by land.",
+        "shipping_module_list": [
+          {
+            "package_size": 1,
+            "pack_split_content": "Items shipped by land:",
+            "shipping_affect_desc": "Due to size, weight, or other reasons, this order will be shipped by land.",
+            "package_list": [
+              {
+                "package_name": "Shipped by land",
+                "package_sn": "BG-2601319FBM0CKL4N",
+                "package_no": 1,
+                "size": 1,
+                "description": "Transit delegation",
+                "operator_time": 1770867347000,
+                "operator_time_format": "Feb 12, 2026, 8:22 pm",
+                "sku_thumb_url_list": [
+                  "https://example.com/mock-images/plaster-05.jpg"
+                ],
+                "goods_volist": [
+                  {
+                    "goods_id": 601300100001111,
+                    "goods_sku_id": 17690000000005,
+                    "quantity": 1,
+                    "thumb_url": "https://example.com/mock-images/plaster-05.jpg",
+                    "goods_name": "Casting Plaster Powder (1kg) Fast Set, Smooth Finish, Beginner-Friendly DIY Craft Material",
+                    "spec": "1000g"
+                  }
+                ],
+                "order_package_status": 22,
+                "order_package_status_desc": "In transit",
+                "package_detail_jump_url": "bgst_express.html?parent_order_sn=PO-163-02890177111002911&package_sn=BG-2601319FBM0CKL4N&transport_method=2",
+                "virtual_package": false,
+                "expect_delivery_end_time": 1776964867,
+                "expect_delivery_start_time": 1774290067,
+                "expect_delivery_time_range": "Mar 23-Apr 23",
+                "is_delivered": false,
+                "way_bill_sn": "0079000000000000000101",
+                "logistics_providers_name": "CTT Express",
+                "logistics_providers_icon": "https://example.com/mock-icons/ctt.png",
+                "logistics_providers_bg_color": "#D7282F",
+                "package_track_unexpected_vo": {
+                  "type": 900003,
+                  "description": "We've <span style='color:#FB7701'>requested an update</span> due to no recent tracking events. Delays can be caused by high volumes, holidays, or logistics. <urllink url='/bgst_express.html?pop_up=ct_prr&_logistic_page_from=301&parent_order_sn=PO-163-02890177111002911&package_sn=BG-2601319FBM0CKL4N' biz_scene='contactProvider'><span style='color:#FB7701'>Contact the courier for more details<iconfont value='f60a'></iconfont></span></urllink>",
+                  "bottom_rich_text": "<iconfont value='e097' style='margin-right:2px' pc-style='margin-right:4px'></iconfont>If no updates in <placeholder biz_scene='refund_countdown' end-ts='1776964867'></placeholder>, <span style='font-weight:600'>you'll get a 5€ credit</span> within 48 hours. If no updates by <span style='font-weight:600'>Mar 10, you can request a refund</span>.",
+                  "display_type": 5
+                },
+                "goods_num_tips": "1 item(s) in total",
+                "logistic_provider_info": {
+                  "provider_name": "CTT Express",
+                  "provider_name_tob": "CTT Express",
+                  "provider_id": 202399517,
+                  "bg_color": "#D7282F",
+                  "logo_url": "https://example.com/mock-icons/ctt.png",
+                  "logo_height": 27,
+                  "logo_width": 65,
+                  "track_detail_link": "https://example.com/mock-tracking?provider_id=202399517&track_sn=0079000000000000000101"
+                },
+                "transport_method": 2,
+                "package_shipping_affect_desc": "Due to size or other reasons, 1 item(s) in your order will be shipped by land and will not affect other items' delivery time.",
+                "delivery_time_with_package_shipping_affect_desc": "<span style=\"color:#FB7701\">Land delivery: Mar 23-Apr 23.</span> Due to size or other reasons, 1 item(s) in your order will be shipped by land and will not affect other items' delivery time.",
+                "show_red_dot": true,
+                "call_back_transfer_vo": {
+                  "callback_scene": 400,
+                  "callback_transfer_info": "MOCK_CALLBACK_TOKEN_LAND_CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+                },
+                "status_level2_code": 10014
+              }
+            ],
+            "order_current_position": 2
+          }
+        ],
+        "except_delivery_time_tip_info": {
+          "delivery_time_pop_info": {
+            "icon_code": "e009",
+            "icon_color": "#777777",
+            "delivery_time_pop_type": 1,
+            "explain_info": {
+              "content_list": [
+                "The guaranteed delivery window for this order is Mar 23-Apr 23.",
+                "Based on this seller's delivery data, <span style='color:#FB7701'>most packages arrive on any day between Mar 23-Apr 23</span>. The actual arrival time may vary due to factors such as <span style='color:#FB7701'>shipment, the weather, and the courier</span>.",
+                "You'll get <span style='color:#FB7701'>a 5,00€ credit</span> if it is delivered later than the guaranteed delivery date (Apr 23)."
+              ],
+              "button": { "desc": "OK" }
+            }
+          }
+        }
+      },
+      "shipping_method_id": 1,
+      "new_order_model": true,
+      "trade_transaction_sn": "TT-163-2057610970000022911",
+      "buy_additional_order_info": {
+        "include_buy_additional_attached_order": false,
+        "attached_order_explain_pop_module": {
+          "title": "What is One-Click pay?",
+          "sub_prompt": [
+            {
+              "text": "One-Click Pay is different from 'Add to cart'.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "One-Click Pay allows you to add items to an order that has a status of 'Processing'.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "These items are not added to your cart for later.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            {
+              "text": "We will charge you for your One-Click Pay items before your order ships or within 13 hours of the original order being place.",
+              "bold": false,
+              "action_type": 0
+            },
+            {
+              "text": "So if the payment is not deducted immediately, please don't worry. We will notify you after the deduction is completed successfully. One-Click Pay items will be paid for and shipped the same way as the items in the original order.",
+              "bold": false,
+              "action_type": 0
+            },
+            { "text": " ", "bold": false, "action_type": 0 },
+            { "bold": false, "action_type": 200 },
+            {
+              "text": "The payment method (i.e. credit or debit card) used for your original order will be automatically used for One-Click Pay items. You can cancel your One-Click Pay items before they ship.",
+              "bold": false,
+              "action_type": 0
+            }
+          ]
+        },
+        "attached_order_desc": "Add to your order with One-Click Pay",
+        "attached_order_button_desc": "One-Click Pay",
+        "attached_order_anchoring_module": {
+          "show_local_warehouse_tab": false,
+          "attached_order_anchoring_tab": 1,
+          "show_free_shipping_tab": false
+        },
+        "ceiling_attached_order_shipping_fee_desc_rich": "<iconfont value=\"e040\" style=\"color: #0A8800;margin-right:4px;\" pc-style=\"font-size:22px;\"></iconfont><span style=\"color: #0A8800;font-weight:500;\" pc-style=\"font-size:20px;font-weight:600;\">All items ship free together </span><br/><span style=\"color: #0A8800;font-weight:400;\" pc-style=\"font-size:16px;\">Pay via One-Click.</span><span style=\"color:#020202;font-weight:400;\" pc-style=\"font-size:16px\"> Ends in </span><countdown end-ts=1769898865></countdown>"
+      },
+      "need_query_relative_parent_order": true,
+      "is_virtual_parent_order": false,
+      "is_create_auto_confirm_order": false,
+      "parent_order_show_tag_vo": {
+        "parent_order_show_tag_list": [
+          { "tag_rich_content": "5€ credit if delay" }
+        ]
+      }
+    }
+  ],
+  "offset_map": {
+    "0": "PO-163-02890177111002911",
+    "1": "NONE"
+  },
+  "has_next_page": true,
+  "extra_info": {
+    "delivery_time_style": "1"
+  },
+  "force_h5": false
+}
