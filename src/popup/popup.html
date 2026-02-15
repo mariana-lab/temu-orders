@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Temu Orders</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Temu Orders</h1>
+      <p class="hint">Open temu.com in a tab, then run.</p>
+
+      <div class="row">
+        <button id="run">Fetch & Show Overlay</button>
+        <button id="close">Close Overlay</button>
+      </div>
+
+      <label class="label">
+        x-phan-data (optional)
+        <input id="xphan" placeholder="leave empty unless needed" />
+      </label>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
