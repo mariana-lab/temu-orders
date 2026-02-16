@@ -1,4 +1,13 @@
 const OVERLAY_ID = '__aria_cards_overlay__'
+const ORDER_COLORS = [
+  '#D9B8FF', // pastel violet
+  '#FFD6B0', // pastel orange
+  '#B9E3FF', // pastel blue
+  '#F8F2AE', // pastel yellow
+  '#C6C4FF', // pastel indigo
+  '#FFBFC1', // pastel red
+  '#BFEFCF' // pastel green
+]
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg?.type === 'TEMU_ORDERS_CLOSE') {
@@ -26,18 +35,22 @@ async function run(xPhanData) {
         .map((entry) => entry?.order_goods)
         .filter(Boolean)
         .map((item) => {
-          const title = item?.spec
-          const alt = item?.goods_name
+          const title = item?.goods_name
+          const alt = item?.spec
           const url = item?.goods_link_url
+          const price = item?.goods_price_with_symbol_display
           const src = item?.thumb_url
             ? item.thumb_url + '?imageView2/2/w/300/q/70/format/avif'
             : null
           if (!title || !src) return null
-          return { title, src, url, alt }
+          return { title, src, url, alt, price }
         })
         .filter(Boolean)
 
       if (!items.length) return null
+
+      const orderAmountRaw =
+        order?.price_desc?.display_amount || order?.price_desc?.display_amount_with_symbol || null
 
       return {
         id: idx + 1,
@@ -45,6 +58,10 @@ async function run(xPhanData) {
         orderedAt: order?.parent_order_time_format || 'Unknown date',
         orderPrice:
           order?.price_desc?.display_amount_with_symbol || order?.price_desc?.display_amount || 'N/A',
+        orderAmount: parseMoneyValue(orderAmountRaw),
+        currencySymbol: order?.price_desc?.symbol || '€',
+        orderUrl: order?.order_link_url || null,
+        accentColor: ORDER_COLORS[idx % ORDER_COLORS.length],
         items
       }
     })
@@ -55,53 +72,61 @@ async function run(xPhanData) {
 
 function buildOverlay(orderCards) {
   const overlay = document.createElement('div')
+  const totalItems = orderCards.reduce((sum, order) => sum + order.items.length, 0)
+  const totalAmount = orderCards.reduce((sum, order) => sum + order.orderAmount, 0)
+  const currencySymbol = orderCards.find((order) => order.currencySymbol)?.currencySymbol || '€'
+
   overlay.id = OVERLAY_ID
   overlay.innerHTML = `
     <div class="__aria_cards_header__">
-      <div><b>Orders</b> (${orderCards.length})</div>
+      <div>
+        <b>Orders</b> (${orderCards.length}) <b>Items</b> (${totalItems}) <b>${escapeHtml(formatMoney(totalAmount))} ${escapeHtml(currencySymbol)}</b>
+      </div>
       <div class="__aria_cards_actions__">
         <button id="__aria_cards_copy__">Copy JSON</button>
         <button id="__aria_cards_close__">Close</button>
       </div>
     </div>
-    <div class="__aria_orders_grid__"></div>
+    <div class="__aria_cards_grid__"></div>
   `
   document.body.appendChild(overlay)
 
-  const grid = overlay.querySelector('.__aria_orders_grid__')
+  const grid = overlay.querySelector('.__aria_cards_grid__')
 
   orderCards.forEach((order) => {
-    const orderCard = document.createElement('section')
-    orderCard.className = '__aria_order_card__'
-    orderCard.innerHTML = `
-      <div class="__aria_order_card_header__">
-        <div class="__aria_order_card_title__">Order #${order.id}</div>
-        <div class="__aria_order_card_status__">${escapeHtml(order.shippingStatus)}</div>
-      </div>
-      <div class="__aria_order_card_meta__">
-        <span><b>Price:</b> ${escapeHtml(order.orderPrice)}</span>
-        <span><b>Date:</b> ${escapeHtml(order.orderedAt)}</span>
-      </div>
-      <div class="__aria_cards_grid__"></div>
-    `
-
-    const itemsGrid = orderCard.querySelector('.__aria_cards_grid__')
     order.items.forEach((item, idx) => {
-      const card = document.createElement('div')
-      card.className = '__aria_card__'
-      card.innerHTML = `
+      const itemGroup = document.createElement('div')
+      itemGroup.className = '__aria_item_group__'
+      itemGroup.style.setProperty('--order-accent-color', order.accentColor)
+
+      const note = idx === 0
+        ? `<div class="__aria_order_note__">
+            <a target="_blank" rel="noopener noreferrer" href="${resolveUrl(order.orderUrl) || '#'}">
+              Order #${orderCards.length - order.id + 1}
+            </a>
+            <span>${escapeHtml(order.shippingStatus)}</span>
+            <span>${escapeHtml(order.orderPrice)}</span>
+            <span>${escapeHtml(order.orderedAt)}</span>
+          </div>`
+        : ''
+
+      itemGroup.innerHTML = `
+        ${note}
+        <div class="__aria_card__">
         <a target="_blank" rel="noopener noreferrer" href="${item.url || '#'}">
           <img src="${item.src}" alt="${escapeHtml(item.alt)}">
         </a>
         <div class="__aria_card_body__">
-          <div class="__aria_card_title__">${escapeHtml(item.title)}</div>
-          <div class="__aria_card_meta__">Item #${idx + 1}</div>
+        <div class="__aria_card_meta__">
+          <span>Item #${idx + 1}</span>
+          <span>${escapeHtml(item.price)}</span>
+        </div>
+        <div class="__aria_card_title__">${escapeHtml(item.title)}</div>
+        </div>
         </div>
       `
-      itemsGrid.appendChild(card)
+      grid.appendChild(itemGroup)
     })
-
-    grid.appendChild(orderCard)
   })
 
   overlay.querySelector('#__aria_cards_close__').addEventListener('click', closeOverlay)
@@ -211,4 +236,27 @@ function toast(msg) {
   t.textContent = msg
   document.body.appendChild(t)
   setTimeout(() => t.remove(), 1500)
+}
+
+function parseMoneyValue(value) {
+  if (!value) return 0
+  const normalized = String(value)
+    .replace(/\s/g, '')
+    .replace(',', '.')
+    .replace(/[^\d.-]/g, '')
+  const parsed = Number.parseFloat(normalized)
+  return Number.isFinite(parsed) ? parsed : 0
+}
+
+function formatMoney(value) {
+  return Number(value || 0).toFixed(2)
+}
+
+function resolveUrl(url) {
+  if (!url) return null
+  try {
+    return new URL(url, location.origin).href
+  } catch {
+    return null
+  }
 }
