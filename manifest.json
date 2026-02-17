@@ -3,17 +3,39 @@
   "name": "Temu Orders Viewer",
   "version": "0.1.0",
   "description": "View your Temu order items in an overlay and copy JSON.",
-  "permissions": ["activeTab", "tabs", "scripting", "clipboardWrite"],
-  "host_permissions": ["https://www.temu.com/*"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.temu.com/*"
+  ],
   "action": {
     "default_title": "Temu Orders Viewer",
     "default_popup": "popup/popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.temu.com/*"],
-      "js": ["content/content.js"],
-      "css": ["content/overlay.css"],
+      "matches": [
+        "https://www.temu.com/*"
+      ],
+      "js": [
+        "content/constants.js",
+        "content/utils.js",
+        "content/data.js",
+        "content/components.js",
+        "content/overlay.js",
+        "content/content.js"
+      ],
+      "css": [
+        "content/overlay-base.css",
+        "content/overlay-header.css",
+        "content/overlay-grid.css",
+        "content/overlay-card.css",
+        "content/overlay-toast.css"
+      ],
       "run_at": "document_idle"
     }
   ],
