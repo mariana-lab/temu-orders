@@ -1,3 +1,5 @@
+window.temuOrders = window.temuOrders || {}
+
 const OVERLAY_ID = '__aria_cards_overlay__'
 const ORDER_COLORS = [
   '#D9B8FF', // pastel violet
@@ -8,6 +10,11 @@ const ORDER_COLORS = [
   '#FFBFC1', // pastel red
   '#BFEFCF' // pastel green
 ]
+const CATEGORIES = {
+  all: {
+    itemsIds: []
+  }
+}
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg?.type === 'TEMU_ORDERS_CLOSE') {
@@ -17,73 +24,53 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   }
 
   if (msg?.type === 'TEMU_ORDERS_RUN') {
-    run(msg?.xPhanData || null)
+    runOrders(msg?.xPhanData || null)
+      .then(() => sendResponse({ ok: true }))
+      .catch((e) => sendResponse({ ok: false, error: String(e?.message || e) }))
+    return true // keep channel open for async
+  }
+
+  if (msg?.type === 'TEMU_ITEMS_RUN') {
+    runItems()
       .then(() => sendResponse({ ok: true }))
       .catch((e) => sendResponse({ ok: false, error: String(e?.message || e) }))
     return true // keep channel open for async
   }
 })
 
-async function run(xPhanData) {
-  // Remove existing overlay if present
+async function runOrders(xPhanData) {
   closeOverlay()
 
-  const orders = await fetchAllOrders({ xPhanData })
-  const orderCards = orders
-    .map((order, idx) => {
-      const items = (order?.order_list ?? [])
-        .map((entry) => entry?.order_goods)
-        .filter(Boolean)
-        .map((item) => {
-          const title = item?.goods_name
-          const alt = item?.spec
-          const url = item?.goods_link_url
-          const price = item?.goods_price_with_symbol_display
-          const src = item?.thumb_url
-            ? item.thumb_url + '?imageView2/2/w/300/q/70/format/avif'
-            : null
-          if (!title || !src) return null
-          return { title, src, url, alt, price }
-        })
-        .filter(Boolean)
+  const orders = await getAllOrders({ xPhanData })
+  window.temuOrders.orders = orders
+  buildOrdersOverlay(orders)
 
-      if (!items.length) return null
-
-      const orderAmountRaw =
-        order?.price_desc?.display_amount || order?.price_desc?.display_amount_with_symbol || null
-
-      return {
-        id: idx + 1,
-        shippingStatus: order?.status_prompt || 'Unknown status',
-        orderedAt: order?.parent_order_time_format || 'Unknown date',
-        orderPrice:
-          order?.price_desc?.display_amount_with_symbol || order?.price_desc?.display_amount || 'N/A',
-        orderAmount: parseMoneyValue(orderAmountRaw),
-        currencySymbol: order?.price_desc?.symbol || '€',
-        orderUrl: order?.order_link_url || null,
-        accentColor: ORDER_COLORS[idx % ORDER_COLORS.length],
-        items
-      }
-    })
-    .filter(Boolean)
-
-  buildOverlay(orderCards)
+  const itemsMap = await getAllItemsMap(orders)
+  window.temuOrders.itemsMap = itemsMap
+  CATEGORIES.all.itemsIds = Array.from(itemsMap).map(([key, value]) => value.id)
 }
 
-function buildOverlay(orderCards) {
+async function runItems(category) {
+  closeOverlay()
+
+  const itemsMap = window.temuOrders.itemsMap
+  buildItemsOverlay(itemsMap, category)
+}
+
+function buildOrdersOverlay(orders) {
   const overlay = document.createElement('div')
-  const totalItems = orderCards.reduce((sum, order) => sum + order.items.length, 0)
-  const totalAmount = orderCards.reduce((sum, order) => sum + order.orderAmount, 0)
-  const currencySymbol = orderCards.find((order) => order.currencySymbol)?.currencySymbol || '€'
+  const totalItems = orders.reduce((sum, order) => sum + order.items.length, 0)
+  const totalAmount = orders.reduce((sum, order) => sum + order.orderAmount, 0)
+  const currencySymbol = orders.find((order) => order.currencySymbol)?.currencySymbol || '€'
 
   overlay.id = OVERLAY_ID
   overlay.innerHTML = `
     <div class="__aria_cards_header__">
       <div>
-        <b>Orders</b> (${orderCards.length}) <b>Items</b> (${totalItems}) <b>${escapeHtml(formatMoney(totalAmount))} ${escapeHtml(currencySymbol)}</b>
+        <b>Orders</b> (${orders.length}) <b>Items</b> (${totalItems}) <b>${escapeHtml(formatMoney(totalAmount))} ${escapeHtml(currencySymbol)}</b>
       </div>
       <div class="__aria_cards_actions__">
-        <button id="__aria_cards_copy__">Copy JSON</button>
+        <button id="__aria_cards_items__">items</button>
         <button id="__aria_cards_close__">Close</button>
       </div>
     </div>
@@ -93,7 +80,7 @@ function buildOverlay(orderCards) {
 
   const grid = overlay.querySelector('.__aria_cards_grid__')
 
-  orderCards.forEach((order) => {
+  orders.forEach((order) => {
     order.items.forEach((item, idx) => {
       const itemGroup = document.createElement('div')
       itemGroup.className = '__aria_item_group__'
@@ -102,7 +89,7 @@ function buildOverlay(orderCards) {
       const note = idx === 0
         ? `<div class="__aria_order_note__">
             <a target="_blank" rel="noopener noreferrer" href="${resolveUrl(order.orderUrl) || '#'}">
-              Order #${orderCards.length - order.id + 1}
+              Order #${orders.length - order.id + 1}
             </a>
             <span>${escapeHtml(order.shippingStatus)}</span>
             <span>${escapeHtml(order.orderPrice)}</span>
@@ -131,21 +118,60 @@ function buildOverlay(orderCards) {
 
   overlay.querySelector('#__aria_cards_close__').addEventListener('click', closeOverlay)
 
-  overlay.querySelector('#__aria_cards_copy__').addEventListener('click', async () => {
-    const payload = orderCards.map(({ id, shippingStatus, orderedAt, orderPrice, items }) => ({
-      id,
-      shippingStatus,
-      orderedAt,
-      orderPrice,
-      items
-    }))
-    try {
-      await navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
-      toast('Copied JSON to clipboard')
-    } catch {
-      console.log(payload)
-      toast('Could not copy. JSON logged to console.')
-    }
+  overlay.querySelector('#__aria_cards_items__').addEventListener('click', async () => {
+    closeOverlay()
+    buildItemsOverlay(window.temuOrders.itemsMap, CATEGORIES.all)
+  })
+}
+
+function buildItemsOverlay(itemsMap, category, edit) {
+  const overlay = document.createElement('div')
+  const categoryItems = category.itemsIds.map(itemId => itemsMap.get(itemId))
+  const totalItems = categoryItems.length
+  const totalAmount = categoryItems.reduce((sum, item) => sum + item.price, 0)
+  const currencySymbol = '€'
+
+  overlay.id = OVERLAY_ID
+  overlay.innerHTML = `
+    <div class="__aria_cards_header__">
+      <div>
+        <b>${category.title}</b> (${totalItems}) <b>Items</b> (${totalItems}) <b>${escapeHtml(formatMoney(totalAmount))} ${escapeHtml(currencySymbol)}</b>
+      </div>
+      <div class="__aria_cards_actions__">
+        <button id="__aria_cards_orders__">Orders</button>
+        <button id="__aria_cards_close__">Close</button>
+      </div>
+    </div>
+    <div class="__aria_cards_grid__"></div>
+  `
+  document.body.appendChild(overlay)
+
+  const grid = overlay.querySelector('.__aria_cards_grid__')
+
+  itemsMap.forEach((item, id) => {
+    const itemGroup = document.createElement('div')
+    itemGroup.className = '__aria_item_group__'
+
+    itemGroup.innerHTML = `
+        <div class="__aria_card__">
+        <a target="_blank" rel="noopener noreferrer" href="${item.url || '#'}">
+          <img src="${item.src}" alt="${escapeHtml(item.alt)}">
+        </a>
+        <div class="__aria_card_body__">
+        <div class="__aria_card_meta__">
+          <span>Item #${id}</span>
+          <span>${escapeHtml(item.price)}</span>
+        </div>
+        <div class="__aria_card_title__">${escapeHtml(item.title)}</div>
+        </div>
+        </div>
+      `
+    grid.appendChild(itemGroup)
+  })
+
+  overlay.querySelector('#__aria_cards_orders__').addEventListener('click', async () => {
+    closeOverlay()
+    buildOrdersOverlay(window.temuOrders.orders)
   })
 }
 
@@ -219,6 +245,57 @@ async function fetchAllOrders({ xPhanData } = {}) {
   }
 
   return orders
+}
+
+async function getAllOrders({ xPhanData }) {
+  const ordersRaw = await fetchAllOrders({ xPhanData })
+  const orders = ordersRaw
+    .map((order, idx) => {
+      const items = (order?.order_list ?? [])
+        .map((entry) => entry?.order_goods)
+        .filter(Boolean)
+        .map((item) => {
+          const id = item?.goods_id
+          const title = item?.goods_name
+          const alt = item?.spec
+          const url = item?.goods_link_url
+          const price = item?.goods_price_with_symbol_display
+          const src = item?.thumb_url
+            ? item.thumb_url + '?imageView2/2/w/300/q/70/format/avif'
+            : null
+          if (!title || !src) return null
+          return { id, title, src, url, alt, price }
+        })
+        .filter(Boolean)
+
+      if (!items.length) return null
+
+      const orderAmountRaw =
+        order?.price_desc?.display_amount || order?.price_desc?.display_amount_with_symbol || null
+
+      return {
+        id: idx + 1,
+        shippingStatus: order?.status_prompt || 'Unknown status',
+        orderedAt: order?.parent_order_time_format || 'Unknown date',
+        orderPrice:
+          order?.price_desc?.display_amount_with_symbol || order?.price_desc?.display_amount || 'N/A',
+        orderAmount: parseMoneyValue(orderAmountRaw),
+        currencySymbol: order?.price_desc?.symbol || '€',
+        orderUrl: order?.order_link_url || null,
+        accentColor: ORDER_COLORS[idx % ORDER_COLORS.length],
+        items
+      }
+    })
+    .filter(Boolean)
+
+  return orders
+}
+
+async function getAllItemsMap(orders) {
+  const itemsMap = new Map();
+  orders.forEach(order => order.items.forEach(item => itemsMap.set(item.id, item)))
+
+  return itemsMap
 }
 
 function escapeHtml(str) {
